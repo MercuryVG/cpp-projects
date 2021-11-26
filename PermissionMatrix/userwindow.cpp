@@ -94,9 +94,20 @@ void UserWindow::on_generate_button_clicked()
     extern QList<User*> USERS_LIST;
 
     //appending user to global users list
+    QFile file("Users.txt");
+    if(!file.open(QIODevice::OpenModeFlag::Append))
+    {
+        delete user;
+        show_user_error("Not able to write to user database");
+        return;
+    }
+    QTextStream in(&file);
+    in << user->get_user_name() + " " + QString::number(user->get_user_role()) << '\n';
+    file.close();
     USERS_LIST.append(user);
 
     user_name_field->clear();
+    user_role_field->setCurrentIndex(0);
 }
 
 bool check_for_proper_user_name(QString name)

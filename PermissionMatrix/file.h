@@ -9,6 +9,7 @@ class File
 {
 public:
     File();
+    File(QString name, Permission_list permissions[]);
 
 public:
     void update_permission_for_role(int role, int permisison);

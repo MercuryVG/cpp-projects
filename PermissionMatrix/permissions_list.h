@@ -3,7 +3,7 @@
 
 enum Permission_list
 {
-    none,
+    none = 0,
     r,
     w,
     e,

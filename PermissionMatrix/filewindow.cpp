@@ -140,12 +140,26 @@ void FileWindow::on_generate_button_clicked()
 
     //get global list of files and append it with generated one
     extern QList<File*> FILES_LIST;
+    QFile file("Files.txt");
+    if(!file.open(QIODevice::OpenModeFlag::Append))
+    {
+        show_file_error("Not able to write to file database");
+        return;
+    }
     working_file->set_file_name(name);
+    QTextStream in(&file);
+    in << working_file->get_file_name() + " " + QString::number(working_file->get_permission_for_role(0)) + " " + QString::number(working_file->get_permission_for_role(1)) + " " + QString::number(working_file->get_permission_for_role(2)) + " " +
+          QString::number(working_file->get_permission_for_role(3)) + " " + QString::number(working_file->get_permission_for_role(4)) + " " + QString::number(working_file->get_permission_for_role(5)) + " " + QString::number(working_file->get_permission_for_role(6)) + " " +
+          QString::number(working_file->get_permission_for_role(7)) << '\n';
+    file.close();
     FILES_LIST.append(this->working_file);
     filename_field->clear();
 
-    //creating new working file after appending int
     this->working_file = new File;
+    permissions_combobox->setCurrentIndex(0);
+    role_combobox->setCurrentIndex(0);
+
+    //creating new working file after appending int
 }
 
 void FileWindow::on_reset_button_clicked()
@@ -196,3 +210,4 @@ void show_file_error(QString error)
     empty_name_messagebox.exec();
     return;
 }
+

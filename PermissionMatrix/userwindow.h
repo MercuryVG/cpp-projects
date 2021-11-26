@@ -8,6 +8,9 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QLineEdit>
+#include <QFile>
+#include <QStringList>
+#include <QTextStream>
 #include <QComboBox>
 
 class UserWindow : public QWidget

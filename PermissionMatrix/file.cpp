@@ -37,3 +37,12 @@ void File::set_file_name(QString name)
 {
     file_name = name;
 }
+
+File::File(QString name, Permission_list permissions[])
+{
+    set_file_name(name);
+    for(int i = 0; i < 7; i++)
+    {
+        update_permission_for_role(i, permissions[i]);
+    }
+}

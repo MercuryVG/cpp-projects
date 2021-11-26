@@ -10,6 +10,9 @@
 #include <QVBoxLayout>
 #include <QMessageBox>
 #include "permissions.h"
+#include <QFile>
+#include <QStringList>
+#include <QTextStream>
 #include "file.h"
 
 class FileWindow : public QWidget

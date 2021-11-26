@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>478</width>
-    <height>441</height>
+    <width>1177</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,14 +23,36 @@
      </layout>
     </item>
     <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Choose user</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="user_field"/>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="user_label">
+          <property name="text">
+           <string>Choose user</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="user_field"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="file_label">
+          <property name="text">
+           <string>Choose file</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="file_field"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3"/>
@@ -40,7 +62,14 @@
       <item>
        <widget class="QPushButton" name="show_permissions_button">
         <property name="text">
-         <string>Show permissions</string>
+         <string>Show permission</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="show_files_button">
+        <property name="text">
+         <string>Show files</string>
         </property>
        </widget>
       </item>
@@ -62,6 +91,20 @@
        <widget class="QPushButton" name="create_user_button">
         <property name="text">
          <string>Create user</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_file_button">
+        <property name="text">
+         <string>Delete file</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_user_button">
+        <property name="text">
+         <string>Delete user</string>
         </property>
        </widget>
       </item>
@@ -88,12 +131,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>478</width>
+     <width>1177</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

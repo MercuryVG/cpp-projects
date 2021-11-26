@@ -3,8 +3,14 @@
 
 #include <QMainWindow>
 #include <QList>
+#include <QFile>
+#include <QTextStream>
+#include <QStringList>
 #include "userwindow.h"
 #include "filewindow.h"
+#include "deleteuserwindow.h"
+#include <deletefilewindow.h>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,6 +31,12 @@ private slots:
     void on_create_file_button_clicked();
     void on_show_permissions_button_clicked();
     void on_show_users_button_clicked();
+
+    void on_show_files_button_clicked();
+
+    void on_delete_file_button_clicked();
+
+    void on_delete_user_button_clicked();
 
 private:
     Ui::MainWindow *ui;
